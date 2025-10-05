@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Fondo ilustrado verde para Raíz Urbana">
+  <defs>
+    <!-- Paleta -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B1320"/>
+      <stop offset="48%" stop-color="#1B5E20"/>
+      <stop offset="100%" stop-color="#2E7D32"/>
+    </linearGradient>
+
+    <!-- Sombra suave para profundidad -->
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="20" result="b"/>
+      <feBlend in="SourceGraphic" in2="b" mode="normal"/>
+    </filter>
+
+    <!-- Textura muy sutil tipo "grain" -->
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="turb"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.02"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="turb" mode="overlay"/>
+    </filter>
+
+    <!-- Hoja genérica -->
+    <g id="leaf">
+      <path d="M120 10
+               C 80 15, 40 45, 25 85
+               C 10 125, 20 170, 55 195
+               C 85 218, 135 220, 170 200
+               C 210 175, 230 130, 228 95
+               C 226 60, 200 25, 170 15
+               C 155 10, 140 8, 120 10 Z"
+            fill="#A5D6A7"/>
+      <path d="M120 18
+               C 110 70, 120 135, 160 195"
+            fill="none" stroke="#1B5E20" stroke-width="6" stroke-linecap="round"/>
+      <path d="M100 65 C 110 78, 130 90, 150 95"
+            fill="none" stroke="#1B5E20" stroke-width="5" stroke-linecap="round"/>
+      <path d="M85 105 C 105 115, 125 120, 150 122"
+            fill="none" stroke="#1B5E20" stroke-width="5" stroke-linecap="round"/>
+    </g>
+
+    <!-- Colina orgánica -->
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1B5E20"/>
+      <stop offset="100%" stop-color="#2E7D32"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <!-- Colinas (capas) -->
+  <g filter="url(#soft)" opacity="0.55">
+    <path d="M0,700 C 200,600 400,640 600,680 C 850,730 1000,630 1250,660 C 1400,676 1500,720 1600,700 L1600,900 L0,900 Z"
+          fill="url(#hill)"/>
+    <path d="M0,750 C 240,690 430,760 650,770 C 980,790 1120,720 1600,760 L1600,900 L0,900 Z"
+          fill="#255D2D" opacity="0.7"/>
+  </g>
+
+  <!-- Hojas grandes laterales (bordes oscuros para dejar el centro libre de texto) -->
+  <g opacity="0.45" filter="url(#soft)">
+    <use href="#leaf" transform="translate(-40,520) scale(2.4) rotate(-18)"/>
+    <use href="#leaf" transform="translate(1320,460) scale(2.2) rotate(22)"/>
+  </g>
+
+  <!-- Hojas pequeñas decorativas -->
+  <g opacity="0.6">
+    <use href="#leaf" transform="translate(1200,120) scale(0.9) rotate(15)"/>
+    <use href="#leaf" transform="translate(260,150) scale(0.8) rotate(-12)"/>
+  </g>
+
+  <!-- Luces de acento (ámbar) -->
+  <g fill="#FFC107" opacity="0.35" filter="url(#soft)">
+    <circle cx="210" cy="220" r="8"/>
+    <circle cx="1370" cy="180" r="6"/>
+    <circle cx="1280" cy="280" r="4"/>
+    <circle cx="320" cy="260" r="5"/>
+  </g>
+
+  <!-- Textura sutil general -->
+  <rect width="1600" height="900" fill="transparent" filter="url(#grain)"/>
+</svg>

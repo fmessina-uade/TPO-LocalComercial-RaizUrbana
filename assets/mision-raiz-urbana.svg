@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Ilustración misión Raíz Urbana: maceta con brotes y hojas">
+  <defs>
+    <!-- Paleta -->
+    <linearGradient id="bg-mision" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F0FFF4"/>
+      <stop offset="100%" stop-color="#E3F2E6"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#66BB6A"/>
+      <stop offset="100%" stop-color="#2E7D32"/>
+    </linearGradient>
+    <linearGradient id="potGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1B5E20"/>
+      <stop offset="100%" stop-color="#14481A"/>
+    </linearGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="20" result="b"/>
+      <feBlend in="SourceGraphic" in2="b" mode="normal"/>
+    </filter>
+    <!-- Textura sutil -->
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" stitchTiles="stitch" result="turb"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.015"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="turb" mode="overlay"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo claro con ondas -->
+  <rect width="1600" height="900" fill="url(#bg-mision)"/>
+  <g fill="#DFF0E2" filter="url(#soft)">
+    <path d="M0 650 C 200 600, 420 640, 650 620 C 900 600, 1150 650, 1600 620 L1600 900 L0 900 Z"/>
+    <path d="M0 720 C 280 700, 520 760, 820 740 C 1120 720, 1400 760, 1600 740 L1600 900 L0 900 Z" opacity="0.8"/>
+  </g>
+
+  <!-- Rayos de propósito (misión) -->
+  <g stroke="#A5D6A7" stroke-width="2" opacity="0.7">
+    <line x1="800" y1="180" x2="800" y2="60"/>
+    <line x1="800" y1="180" x2="900" y2="90"/>
+    <line x1="800" y1="180" x2="700" y2="90"/>
+    <line x1="800" y1="180" x2="920" y2="150"/>
+    <line x1="800" y1="180" x2="680" y2="150"/>
+  </g>
+
+  <!-- Maceta central -->
+  <g transform="translate(600,330)">
+    <rect x="140" y="240" width="320" height="140" rx="24" fill="url(#potGrad)"/>
+    <rect x="120" y="220" width="360" height="36" rx="18" fill="#0E3A16"/>
+    <ellipse cx="300" cy="216" rx="170" ry="22" fill="#6B8F71" opacity="0.25"/>
+
+    <!-- Tallos -->
+    <path d="M300 220 C 300 160, 300 130, 300 90" fill="none" stroke="#1B5E20" stroke-width="10" stroke-linecap="round"/>
+    <path d="M300 200 C 260 150, 240 120, 230 90" fill="none" stroke="#1B5E20" stroke-width="8" stroke-linecap="round"/>
+    <path d="M300 200 C 340 150, 360 120, 370 92" fill="none" stroke="#1B5E20" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Hojas -->
+    <path d="M270 120 C 230 120, 200 150, 200 170 C 200 190, 230 200, 260 190 C 285 182, 300 165, 300 150 C 300 135, 287 120, 270 120 Z" fill="url(#leafGrad)"/>
+    <path d="M330 110 C 360 110, 390 130, 395 150 C 400 170, 380 190, 350 190 C 320 190, 300 170, 300 150 C 300 130, 312 110, 330 110 Z" fill="url(#leafGrad)"/>
+    <path d="M300 90 C 280 90, 260 100, 258 115 C 256 132, 275 145, 300 145 C 325 145, 344 132, 342 115 C 340 100, 320 90, 300 90 Z" fill="url(#leafGrad)"/>
+
+    <!-- Corazón/compromiso (acento) -->
+    <path d="M300 60
+             C 285 40, 250 48, 250 78
+             C 250 100, 270 115, 300 135
+             C 330 115, 350 100, 350 78
+             C 350 48, 315 40, 300 60 Z"
+          fill="#FFC107" opacity="0.9"/>
+  </g>
+
+  <!-- Hojas decorativas -->
+  <g opacity="0.35" filter="url(#soft)">
+    <path d="M120 760 C 60 700, 40 630, 60 580 C 150 620, 200 650, 220 720 C 190 760, 160 770, 120 760 Z" fill="#A5D6A7"/>
+    <path d="M1480 770 C 1540 710, 1560 640, 1540 590 C 1450 630, 1400 660, 1380 730 C 1410 770, 1440 780, 1480 770 Z" fill="#A5D6A7"/>
+  </g>
+
+  <!-- Textura final -->
+  <rect width="1600" height="900" fill="transparent" filter="url(#grain)"/>
+</svg>

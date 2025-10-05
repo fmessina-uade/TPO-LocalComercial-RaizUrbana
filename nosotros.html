@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nosotros · Raíz Urbana</title>
+
+    <link rel="icon" href="assets/favicon-raiz-urbana.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script>
+        tailwind = {
+            config: {
+                corePlugins: { preflight: false },
+                prefix: 'tw-',
+                theme: { extend: { colors: { brand:'#2E7D32', brandDark:'#1B5E20', accent:'#FFC107' } } }
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased">
+<a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+<header class="border-bottom">
+    <div class="container py-3 d-flex align-items-center justify-content-between gap-3 header-wrap">
+        <a href="index.html" class="d-flex align-items-center text-decoration-none">
+            <img src="assets/logo.svg" alt="Logo Raíz Urbana" class="site-logo me-2">
+        </a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+
+        <label for="menu-toggle" class="menu-btn d-md-none" aria-controls="nav">
+            <span class="visually-hidden">Abrir menú</span>
+            <span class="menu-icon" aria-hidden="true"></span>
+        </label>
+
+        <nav id="nav" class="nav-main">
+            <ul class="list-unstyled m-0">
+                <li><a class="nav-link p-0" href="index.html">Inicio</a></li>
+                <li><a class="nav-link p-0" href="nosotros.html" aria-current="page">Nosotros</a></li>
+                <li><a class="nav-link p-0" href="productos.html">Productos</a></li>
+                <li><a class="nav-link p-0" href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <label for="menu-toggle" class="menu-overlay d-md-none" aria-hidden="true"></label>
+    </div>
+</header>
+
+<section class="subhero text-center">
+    <div class="container">
+        <p class="eyebrow-title mb-1">Sobre nosotros</p>
+        <h1 class="display-6 fw-bold mb-2">Crecemos con vos, hoja a hoja</h1>
+        <p class="section-intro mx-auto">Somos un local ubicado en la Galería Güemes que acerca la naturaleza al día a día con
+            plantas, macetas y asesoramiento claro para que cualquier espacio se sienta vivo.</p>
+    </div>
+</section>
+
+<main id="contenido">
+    <section id="mision" class="py-5 tw-bg-gray-50">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <p class="eyebrow mb-1">Nuestra misión</p>
+                    <div class="hr-leaf"></div>
+                    <h2 class="h3 fw-bold tw-mb-2">Naturaleza accesible en espacios urbanos</h2>
+                    <p class="mb-0">Hacer que la <strong>naturaleza sea accesible</strong> en espacios urbanos con plantas,
+                        macetas y asesoramiento que cualquiera pueda seguir, hoy y a futuro.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="assets/mision-raiz-urbana.svg" alt="Plantas y macetas"
+                         class="img-fluid tw-rounded-xl tw-shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="valores" class="py-5">
+        <div class="container">
+            <p class="eyebrow mb-1">Nuestros valores</p>
+            <div class="hr-leaf"></div>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="values-card h-100">
+            <span class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-3 3-5 5-5s5 2 5 5"/><path d="M11 20c0-3 3-5 5-5s5 2 5 5"/></g></svg>
+            </span>
+                        <h3 class="h5 tw-mb-1">Cercanía</h3>
+                        <p class="text-muted m-0">Escuchamos y recomendamos según tu espacio real.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="values-card h-100">
+            <span class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></g></svg>
+            </span>
+                        <h3 class="h5 tw-mb-1">Honestidad</h3>
+                        <p class="text-muted m-0">Si una planta no te conviene, te lo decimos.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="values-card h-100">
+            <span class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 21s-7-4.5-9-8.5C1 8.5 3.5 6 6 6c2 0 3 1 6 4 3-3 4-4 6-4 2.5 0 5 2.5 3 6.5C19 16.5 12 21 12 21z" fill="currentColor"/></svg>
+            </span>
+                        <h3 class="h5 tw-mb-1">Pasión</h3>
+                        <p class="text-muted m-0">Amamos lo que hacemos y se nota.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="values-card h-100">
+            <span class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 12l2 2 4-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+                        <h3 class="h5 tw-mb-1">Confianza</h3>
+                        <p class="text-muted m-0">Construimos relaciones a largo plazo.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="values-card h-100">
+            <span class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M20 4c-8 0-14 6-14 12 0 3 2 4 4 4 6 0 12-6 12-14 0-1-.5-2-2-2z" fill="currentColor"/></svg>
+            </span>
+                        <h3 class="h5 tw-mb-1">Sustentabilidad</h3>
+                        <p class="text-muted m-0">Preferimos producción local y responsable.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="values-card h-100">
+            <span class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="1.2" fill="currentColor"/><circle cx="15" cy="10" r="1.2" fill="currentColor"/><path d="M8 14c1.5 2 6.5 2 8 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+                        <h3 class="h5 tw-mb-1">Diversión</h3>
+                        <p class="text-muted m-0">Disfrutamos el proceso y lo contagiamos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historia (timeline) -->
+    <section id="historia" class="py-5 tw-bg-gray-50">
+        <div class="container">
+            <p class="eyebrow mb-1">Nuestra historia</p>
+            <div class="hr-leaf"></div>
+            <ul class="timeline list-unstyled">
+                <li class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <h3 class="h6 tw-mb-1">2019 · Apertura</h3>
+                    <p class="text-muted m-0">Inauguramos el local 23 en la Galería Güemes.</p>
+                </li>
+                <li class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <h3 class="h6 tw-mb-1">2021 · Talleres</h3>
+                    <p class="text-muted m-0">Sumamos talleres de cuidado de plantas y macetas.</p>
+                </li>
+                <li class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <h3 class="h6 tw-mb-1">2024 · Catálogo online</h3>
+                    <p class="text-muted m-0">Publicamos el catálogo y comenzamos entregas en la zona.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="equipo" class="py-5">
+        <div class="container">
+            <p class="eyebrow mb-1">Equipo</p>
+            <div class="hr-leaf"></div>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <article class="person-card h-100 d-flex align-items-start gap-3">
+                        <span class="avatar" aria-hidden="true">AP</span>
+                        <div>
+                            <h3 class="h5 tw-mb-1">Facundo Messina</h3>
+                            <p class="text-muted m-0">Fundador · Asesoramiento</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-md-4">
+                    <article class="person-card h-100 d-flex align-items-start gap-3">
+                        <span class="avatar" aria-hidden="true">LG</span>
+                        <div>
+                            <h3 class="h5 tw-mb-1">Luis Gómez</h3>
+                            <p class="text-muted m-0">Atención y envíos</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-md-4">
+                    <article class="person-card h-100 d-flex align-items-start gap-3">
+                        <span class="avatar" aria-hidden="true">MD</span>
+                        <div>
+                            <h3 class="h5 tw-mb-1">Maru Díaz</h3>
+                            <p class="text-muted m-0">Talleres y redes - Selección de plantas</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="py-4 border-top">
+    <div class="container d-flex flex-column flex-md-row gap-3 align-items-center justify-content-between">
+        <p class="m-0 small">© 2025 Raíz Urbana</p>
+        <div class="small">
+            <a href="#contenido" class="me-3">Ir arriba</a>
+            <a href="terminos.html">Términos y Condiciones</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

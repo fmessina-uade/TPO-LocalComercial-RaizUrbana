@@ -1,0 +1,282 @@
+:root{
+    --brand:#2E7D32;
+    --brand-700:#1B5E20;
+    --accent:#FFC107;
+    --ink:#0B1320;
+}
+
+body{
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+}
+
+.brand-title{ font-family:Poppins, Arial, sans-serif; color:var(--brand-700) }
+.section-title{ font-family:Poppins, Arial, sans-serif; color:var(--brand-700) }
+.price{ font-weight:700; color:var(--brand-700) }
+
+.menu-toggle{ display:none }
+.header-wrap{ position:relative }
+
+.menu-btn{
+    width:44px; height:44px; display:flex; align-items:center; justify-content:center;
+    border:1px solid #e5e7eb; border-radius:.5rem; background:#fff; cursor:pointer;
+    position:relative; z-index:1001;
+}
+.menu-icon, .menu-icon::before, .menu-icon::after{
+    content:""; display:block; width:22px; height:2px; background:var(--ink); border-radius:2px;
+    transition:transform .25s ease, opacity .2s ease, top .25s ease; position:relative;
+}
+.menu-icon::before, .menu-icon::after{ position:absolute; left:0 }
+.menu-icon::before{ top:-6px }
+.menu-icon::after{ top: 6px }
+
+#menu-toggle:checked + .menu-btn .menu-icon{ transform:rotate(45deg) }
+#menu-toggle:checked + .menu-btn .menu-icon::before{ transform:rotate(-90deg); top:0 }
+#menu-toggle:checked + .menu-btn .menu-icon::after{ opacity:0 }
+
+.nav-main{ display:none }
+#menu-toggle:checked ~ .nav-main{
+    display:block; position:absolute; top:calc(100% + .5rem); left:0; right:0;
+    background:#fff; border:1px solid #e5e7eb; border-radius:.75rem; padding:.5rem;
+    box-shadow:0 18px 36px rgba(11,19,32,.14); z-index:1000;
+}
+.nav-main ul{ padding:.25rem }
+.nav-main a{
+    display:block; padding:.8rem 1rem; border-radius:.5rem; color:var(--ink); text-decoration:none;
+}
+.nav-main a:hover, .nav-main a:focus{ background:#f6faf6 }
+.nav-main a[aria-current="page"]{ color:var(--brand-700); font-weight:600 }
+
+.menu-overlay{ display:none }
+#menu-toggle:checked ~ .menu-overlay{
+    display:block; position:fixed; inset:0; background:rgba(11,19,32,.35); backdrop-filter:blur(2px);
+    z-index:900;
+}
+
+@media (min-width:768px){
+    .menu-btn,.menu-overlay{ display:none }
+    .nav-main{ display:block !important; position:static; background:transparent; border:0; box-shadow:none; padding:0 }
+    .nav-main ul{ display:flex; gap:1rem; padding:0 }
+    .nav-main a{ padding:0 }
+}
+
+@supports selector(:has(*)){
+    body:has(#menu-toggle:checked){ overflow:hidden }
+}
+
+.btn-cta{ background-color:var(--accent); color:#111; border:none }
+.btn-cta:hover{ background-color:#ffb300; color:#111 }
+
+.hero{
+    min-height: 72vh;
+    padding-block: clamp(2rem, 8vh, 6rem);
+    background-image: linear-gradient(rgba(11,19,32,.55), rgba(11,19,32,.55)),
+    url('assets/hero-raiz-urbana.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+.skip-link{
+    position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{
+    position:static; left:auto; width:auto; height:auto;
+    padding:.5rem .75rem; margin:.5rem; background:#fff;
+    border:2px solid var(--brand); border-radius:.375rem;
+}
+
+.icon-list{list-style:none; padding:0; margin:0}
+.icon-list li{position:relative; padding-left:1.5rem; margin:.4rem 0}
+.icon-list li::before{content:"✓"; position:absolute; left:0; color:var(--brand)}
+
+.stats .stat-number{font-weight:800; color:var(--brand-700)}
+
+.marquee{
+    --gap:3rem;
+    display:flex; overflow:hidden; gap:var(--gap);
+    -webkit-mask:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee__track{ display:flex; align-items:center; gap:var(--gap); animation:scroll 28s linear infinite }
+.marquee__track:hover{ animation-play-state: paused }
+@keyframes scroll{ to{ transform: translateX(calc(-50% - var(--gap)/2)) } }
+.marquee-item{ white-space:nowrap; border:1px solid #e5e7eb; border-radius:.75rem; padding:.6rem 1rem; background:#fff }
+
+.testi-viewport{ position:relative; min-height:220px }
+.testi-slide{ position:absolute; inset:0; opacity:0; animation:testi-fade 21s infinite }
+.testi-slide:nth-child(1){animation-delay:0s}
+.testi-slide:nth-child(2){animation-delay:7s}
+.testi-slide:nth-child(3){animation-delay:14s}
+@keyframes testi-fade{0%{opacity:0}5%{opacity:1}30%{opacity:1}35%{opacity:0}100%{opacity:0}}
+.testi-viewport:hover .testi-slide,
+.testi-viewport:focus-within .testi-slide{ animation-play-state: paused }
+
+.sticky-subnav{ position:sticky; top:0; z-index:1020; background:#fff; border-bottom:1px solid rgba(0,0,0,.08) }
+.sticky-subnav .nav-link[aria-current="true"]{ color:var(--brand-700); font-weight:600 }
+
+.timeline{ position:relative; margin-left:.5rem }
+.timeline::before{ content:""; position:absolute; left:.9rem; top:.2rem; bottom:.2rem; width:2px; background:#e5e7eb }
+.timeline-item{ position:relative; padding-left:2.5rem; margin-bottom:1rem }
+.timeline-dot{ position:absolute; left:.5rem; top:.35rem; width:.8rem; height:.8rem; background:var(--brand); border-radius:50%; box-shadow:0 0 0 4px rgba(46,125,50,.18) }
+
+.modal{ position:fixed; inset:0; display:none; }
+.modal:target{ display:block; }
+.modal-overlay{ position:absolute; inset:0; background:rgba(0,0,0,.55); backdrop-filter: blur(2px); }
+.modal-dialog{
+    position:relative; max-width:680px; margin:6rem auto; background:#fff;
+    border-radius:1rem; padding:1.25rem 1.5rem; box-shadow:0 24px 60px rgba(11,19,32,.35);
+}
+.modal-close{ position:absolute; top:.35rem; right:.6rem; text-decoration:none; font-size:1.8rem; line-height:1; color:#333 }
+.modal-close:hover{ color:#000 }
+
+@supports selector(:has(*)) {
+    body:has(.modal:target){ overflow:hidden }
+}
+
+@media (prefers-reduced-motion:reduce){
+    .marquee__track,.testi-slide{ animation:none }
+    .testi-slide{ position:static; opacity:1 }
+}
+
+.site-logo { height: 40px; width: auto; display: inline-block; }
+
+/* Mejoras Nosotros */
+
+.subhero{
+    color:#fff;
+    padding-block: 3.5rem;
+    background-image:
+            linear-gradient(rgba(11,19,32,.55), rgba(11,19,32,.55)),
+            url('assets/hero-raiz-urbana.svg');
+    background-size: cover;
+    background-position: center;
+}
+.subhero .section-intro{max-width:60ch; opacity:.95}
+
+
+.eyebrow{
+    font-weight:700; font-size:.9rem; letter-spacing:.02em;
+    color:var(--brand-700);
+}
+
+eyebrow-title{
+    font-weight:700; font-size:.9rem; letter-spacing:.02em;
+    color:#dddddd;
+}
+
+.values-card{
+    position:relative; background:#fff; border-radius:1rem;
+    padding:1.25rem 1.25rem; box-shadow:0 8px 24px rgba(11,19,32,.06);
+    border:1px solid #eef1ee; transition:transform .2s ease, box-shadow .2s ease
+}
+.values-card::before{
+    content:""; position:absolute; inset:0; border-radius:inherit; padding-top:3px;
+    background:linear-gradient(90deg, rgba(46,125,50,.6), rgba(255,193,7,.6));
+    -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor; mask-composite:exclude; opacity:.55;
+}
+.values-card:hover{ transform:translateY(-2px); box-shadow:0 16px 34px rgba(11,19,32,.12) }
+.value-icon{
+    width:40px; height:40px; border-radius:.75rem;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(46,125,50,.08); color:var(--brand-700); margin-bottom:.5rem
+}
+
+.timeline .timeline-item{ margin-bottom:1.4rem }
+.timeline .timeline-dot{ background:var(--brand); box-shadow:0 0 0 6px rgba(46,125,50,.18) }
+.timeline .timeline-item h3{ margin-bottom:.25rem }
+.timeline .timeline-item p{ margin-bottom:.5rem }
+
+.person-card{
+    background:#fff; border:1px solid #eef1ee; border-radius:1rem;
+    padding:1.25rem; box-shadow:0 8px 24px rgba(11,19,32,.05)
+}
+.avatar{
+    width:56px; height:56px; border-radius:50%;
+    background:linear-gradient(135deg,#2E7D32,#66BB6A); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-family:Poppins, Arial, sans-serif;
+}
+
+.hr-leaf{
+    width:56px; height:6px; border-radius:999px;
+    background:linear-gradient(90deg,#2E7D32,#66BB6A 70%,#FFC107);
+    opacity:.7; margin:.25rem 0 1rem
+}
+
+/* Mejoras Productos /*
+
+.filters .nav-link{
+    border:1px solid #e5e7eb; background:#fff; color:#374151;
+    border-radius:999px; padding:.35rem .8rem;
+}
+.filters .nav-link.active,
+.filters .nav-link[aria-current="true"]{
+    color:#fff; background:var(--brand); border-color:var(--brand);
+}
+
+/* ===== Tarjeta de producto (hover + jerarquía) ===== */
+.product-card{
+    border-radius:1rem; overflow:hidden; border:1px solid #e9ecef;
+    box-shadow:0 8px 24px rgba(11,19,32,.06);
+    transition:transform .18s ease, box-shadow .18s ease;
+    background:#fff;
+}
+.product-card:hover{ transform:translateY(-2px); box-shadow:0 16px 34px rgba(11,19,32,.12) }
+.product-media{
+    position:relative; background:linear-gradient(135deg,#E8F5E9 0%, #C8E6C9 100%);
+}
+.product-media::after{
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(120% 80% at 80% 20%, rgba(255,193,7,.14), transparent 60%);
+}
+.product-media .badge-top{ position:absolute; top:.75rem; left:.75rem }
+.product-media img{ width:100%; height:100%; object-fit:cover }
+.product-card .card-body{ padding:1rem 1rem .75rem }
+.product-foot{ display:flex; align-items:center; justify-content:space-between; margin-top:.25rem }
+.product-tag{ font-size:.75rem; background:#F8FAF9; border:1px solid #e5e7eb; border-radius:999px; padding:.25rem .5rem; white-space:nowrap }
+.card-cta{ padding:.75rem 1rem; display:flex; justify-content:flex-end }
+.card-cta a{ text-decoration:none }
+
+.price{ font-weight:800; color:var(--brand-700) }
+
+/* Mejoras contacto /*
+/* ===== Modal: asegurar capas para que no se cierre al hacer clic ===== */
+.modal{ position:fixed; inset:0; display:none; z-index:1050; } /* sobre el resto */
+.modal:target{ display:block; }
+.modal-overlay{ position:absolute; inset:0; background:rgba(0,0,0,.55); backdrop-filter:blur(2px); z-index:0; }
+.modal-dialog{ position:relative; z-index:1; pointer-events:auto; }
+
+footer.border-top{ border-top:1px solid #e5e7eb; }
+footer.border-top .container{ padding-top:1rem; padding-bottom:1rem; }
+
+.contact-card{
+    background:#fff; border:1px solid #eef1ee; border-radius:1rem;
+    padding:1.25rem; box-shadow:0 8px 24px rgba(11,19,32,.06);
+}
+
+.contact-list{ list-style:none; padding:0; margin:0 }
+.contact-item{ display:flex; align-items:flex-start; gap:.6rem; margin-bottom:.5rem }
+.icon-circle{
+    width:34px; height:34px; flex:0 0 34px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(46,125,50,.08); color:var(--brand-700)
+}
+.icon-circle svg{ width:18px; height:18px }
+
+.map-card{
+    border:1px solid #e9ecef; border-radius:1rem; overflow:hidden;
+    box-shadow:0 8px 24px rgba(11,19,32,.06);
+}
+
+.subhero{
+    color:#fff; padding-block: 3.5rem;
+    background-image: linear-gradient(rgba(11,19,32,.55), rgba(11,19,32,.55)),
+    url('assets/hero-raiz-urbana.svg');
+    background-size: cover; background-position: center;
+}
+.subhero .section-intro{ max-width:60ch; opacity:.95 }
+
+footer.border-top{ border-top:1px solid #e5e7eb }
+footer.border-top .container{ padding-top:1rem; padding-bottom:1rem }
+
