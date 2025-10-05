@@ -206,10 +206,14 @@ eyebrow-title{
 
 /* Mejoras Productos /*
 
+
+ */
 .filters .nav-link{
     border:1px solid #e5e7eb; background:#fff; color:#374151;
     border-radius:999px; padding:.35rem .8rem;
 }
+
+
 .filters .nav-link.active,
 .filters .nav-link[aria-current="true"]{
     color:#fff; background:var(--brand); border-color:var(--brand);
