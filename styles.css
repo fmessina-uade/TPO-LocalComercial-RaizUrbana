@@ -288,11 +288,22 @@ footer.border-top .container{ padding-top:1rem; padding-bottom:1rem; }
 }
 
 .contact-list{ list-style:none; padding:0; margin:0 }
-.contact-item{ display:flex; align-items:flex-start; gap:.6rem; margin-bottom:.5rem }
+.contact-item{
+    display:flex;
+    align-items:center; /* Centra verticalmente el ícono con el texto */
+    gap:1rem;
+    padding-bottom:1rem;
+    border-bottom:1px solid #eef1ee;
+}
+.contact-item:not(:last-child){ margin-bottom:1rem }
+.contact-item > div {
+    margin: 0; /* Asegura que no haya márgenes predeterminados */
+    padding: 0; /* Asegura que no haya padding predeterminado */
+}
 .icon-circle{
-    width:34px; height:34px; flex:0 0 34px; border-radius:50%;
+    width:24px; height:24px; flex-shrink: 0; border-radius:50%; /* Círculo más pequeño, evita que se encoja */
     display:flex; align-items:center; justify-content:center;
-    background:rgba(46,125,50,.08); color:var(--brand-700)
+    background:rgba(46,125,50,.08); color:var(--brand)
 }
 .icon-circle svg{ width:18px; height:18px }
 
@@ -311,4 +322,3 @@ footer.border-top .container{ padding-top:1rem; padding-bottom:1rem; }
 
 footer.border-top{ border-top:1px solid #e5e7eb }
 footer.border-top .container{ padding-top:1rem; padding-bottom:1rem }
-

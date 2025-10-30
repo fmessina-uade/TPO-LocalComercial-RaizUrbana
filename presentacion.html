@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Raíz Urbana - Facundo Messina</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- ESTILOS PARA VISTA WEB --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .document-wrapper {
+            max-width: 850px;
+            margin: 2rem auto;
+            padding: 4rem;
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        h1 {
+            color: #2E7D32; /* Verde Marca */
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        h2.subtitle {
+            font-size: 1.75rem;
+            color: #555;
+            margin-top: 0;
+            margin-bottom: 2rem;
+            border: none;
+        }
+        h2.section-title {
+            font-size: 1.5rem;
+            color: #000;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            margin-top: 3rem;
+        }
+        h3 {
+            font-size: 1.15rem;
+            color: #333;
+            margin-top: 2rem;
+        }
+        code, pre {
+            font-family: monospace;
+            background-color: #2d2d2d;
+            color: #f1f1f1;
+            padding: 1rem;
+            border-radius: 5px;
+            display: block;
+            overflow-x: auto;
+        }
+        code:not(pre > code) {
+            background-color: #eee;
+            color: #333;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .color-swatch {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-right: 8px;
+            border: 1px solid #ccc;
+        }
+        .nota-aclaratoria {
+            background-color: #e6f7ff;
+            border: 1px solid #b3e0ff;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1.5rem;
+        }
+
+        /* --- ESTILOS PARA IMPRESIÓN Y PDF --- */
+        @media print {
+            body {
+                background-color: #ffffff;
+                font-size: 11pt;
+            }
+            .document-wrapper {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                border: none;
+            }
+            h1 {
+                color: #2E7D32 !important; /* Forzar color en impresión */
+                font-size: 24pt;
+            }
+            h2.subtitle {
+                font-size: 18pt;
+            }
+            h2.section-title {
+                font-size: 16pt;
+                border-bottom: 2px solid #000;
+            }
+
+            /* LA CLAVE: Forzar un salto de página */
+            section.page-break {
+                page-break-before: always;
+            }
+
+            pre {
+                background-color: #f4f4f4 !important; /* Fondo claro para PDF */
+                border: 1px solid #ddd;
+                color: #000 !important;
+            }
+            .nota-aclaratoria {
+                background-color: #f0f0f0 !important;
+                border: 1px solid #ccc;
+            }
+
+            /* Mostrar URLs completas en el PDF */
+            a[href^="http"]::after {
+                content: " [" attr(href) "]";
+                font-size: 9pt;
+                color: #555;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="document-wrapper">
+
+    <header>
+        <h1>TP Diseño y Desarrollo Web</h1>
+        <h2 class="subtitle">Raíz Urbana — Plantas & Deco</h2>
+
+        <p>Sitio dinámico con HTML + CSS (Bootstrap 5 + Tailwind) y JavaScript</p>
+
+        <p style="margin-bottom: 0;"><strong>Alumno:</strong> Facundo Messina</p>
+        <p style="margin-bottom: 0;"><strong>Legajo:</strong> 1150569</p>
+        <p><strong>Curso:</strong> Jueves Virtual Noche (2C/ 2025)</p>
+    </header>
+
+    <section>
+        <h2 class="section-title" style="margin-top: 1rem;">Índice</h2>
+        <ol style="padding-left: 2rem;">
+            <li>1. Identidad visual</li>
+            <li>2. Estructura y mapa del sitio</li>
+            <li>3. Mejoras y Funcionalidades (Segunda Entrega)</li>
+            <li>4. Estrategia: Bootstrap + Tailwind</li>
+            <li>5. Publicación</li>
+            <li>6. Material de investigación</li>
+        </ol>
+    </section>
+
+    <section class="page-break">
+        <h2 class="section-title">1. Identidad visual</h2>
+
+        <h3>Marca</h3>
+        <p>Raíz Urbana — Plantas & Deco. Logotipo SVG propio: <code>assets/logo.svg</code>.</p>
+
+        <h3>Paleta de colores</h3>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li><span class="color-swatch" style="background-color: #2E7D32;"></span> <strong>Verde marca:</strong> <code>#2E7D32</code></li>
+            <li><span class="color-swatch" style="background-color: #1B5E20;"></span> <strong>Verde 700:</strong> <code>#1B5E20</code></li>
+            <li><span class="color-swatch" style="background-color: #FFC107;"></span> <strong>Acento:</strong> <code>#FFC107</code></li>
+            <li><span class="color-swatch" style="background-color: #0B1320;"></span> <strong>Tinta:</strong> <code>#0B1320</code></li>
+        </ul>
+
+        <h3>Tipografías</h3>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>Poppins:</strong> Títulos y llamadas.</li>
+            <li><strong>Inter:</strong> Textos y UI.</li>
+        </ul>
+    </section>
+
+    <section class="page-break">
+        <h2 class="section-title">2. Estructura y mapa del sitio (Actualizado)</h2>
+
+        <h3>Estructura de páginas base</h3>
+        <ul>
+            <li><strong>Inicio:</strong> Hero con imagen, estadísticas, marquee de marcas y testimonios (carrusel CSS).</li>
+            <li><strong>Nosotros:</strong> Misión, valores, historia (timeline) y equipo.</li>
+            <li><strong>Contacto:</strong> Datos, mapa OSM y modal con formulario (CSS-only).</li>
+            <li><strong>Términos:</strong> Página informativa con índice lateral.</li>
+        </ul>
+
+        <h3>Ampliaciones de estructura y catálogo</h3>
+        <ul>
+            <li><strong>Página de Productos (Actualizada):</strong>
+                <ul>
+                    <li>Se expandió el catálogo de 6 a 20 productos para un sitio más robusto.</li>
+                    <li>Se implementó un sistema de <strong>paginación dinámico</strong> en <code>productos.html</code> que muestra los productos en grupos de 6.</li>
+                    <li>Los estilos de la paginación se personalizaron para coincidir con los colores de la marca.</li>
+                </ul>
+            </li>
+            <li><strong>Nueva Página de Promociones:</strong>
+                <ul>
+                    <li>Se creó una nueva página <code>promociones.html</code> y se enlazó al menú de navegación principal.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="page-break">
+        <h2 class="section-title">3. Mejoras y Funcionalidades (Segunda Entrega)</h2>
+        <p>Esta sección detalla la transformación del sitio estático a una plataforma interactiva, gestionada principalmente por JavaScript (<code>promociones.js</code>).</p>
+
+        <h3>Lógica de Negocio y Calculadora Interactiva</h3>
+        <ul>
+            <li><strong>Modal de Selección de Productos:</strong> Se reemplazó un sistema de selección básico por un modal interactivo (imágenes, nombres y precios).</li>
+            <li><strong>Contador de Cantidades:</strong> Se añadió un sistema de contador para seleccionar múltiples unidades del mismo artículo.</li>
+            <li><strong>Límite de Selección (Regla de Negocio):</strong> Restricción que limita la selección a un máximo de 3 unidades totales en el carrito.</li>
+            <li><strong>Promociones Condicionales (Lógica 3x2):</strong>
+                <ul>
+                    <li>Productos específicos designados como "aptos para 3x2" con un distintivo visual.</li>
+                    <li>La promoción "3x2" se activa/desactiva automáticamente en el desplegable según los productos elegidos.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Mejoras de Interfaz y Experiencia de Usuario (UI/UX)</h3>
+        <ul>
+            <li><strong>Botón Condicional:</strong> El botón "Calcular" permanece desactivado (disabled) hasta que se selecciona al menos un producto.</li>
+            <li><strong>Spinner de Carga:</strong> Indicador de carga (spinner) en el botón "Calcular" para dar respuesta visual.</li>
+            <li><strong>Diseño Cohesivo:</strong> Se aplicaron los estilos de las tarjetas (<code>values-card</code>) de "Nosotros" a las promociones.</li>
+        </ul>
+    </section>
+
+    <section class="page-break">
+        <h2 class="section-title">4. Estrategia: Bootstrap + Tailwind juntos</h2>
+
+        <h3>Decisiones</h3>
+        <ul>
+            <li><strong>Bootstrap 5:</strong> Usado para grid, espaciados, tipografías y componentes base (cards, badges).</li>
+            <li><strong>Tailwind (Play CDN):</strong> Usado para utilidades puntuales (con prefijo <code>tw-</code>) sin tocar el CSS global.</li>
+        </ul>
+
+        <h3>Configuración</h3>
+        <p>Se desactiva <code>preflight</code> de Tailwind y se define <code>prefix: 'tw-'</code> para evitar conflictos.</p>
+        <pre><code>&lt;script&gt;
+  tailwind = {
+    config: {
+      corePlugins: { preflight: false },
+      prefix: 'tw-',
+      theme: {
+        extend: {
+          colors: {
+            brand: '#2E7D32',
+            brandDark:'...'
+          }
+        }
+      }
+    }
+  }
+&lt;/script&gt;
+&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</code></pre>
+    </section>
+
+    <section class="page-break">
+        <h2 class="section-title">5. Publicación</h2>
+
+        <p><strong>Repositorio público en GitHub:</strong><br>
+            <a href="https://github.com/fmessina-uade/TPO-LocalComercial-RaizUrbana" target="_blank">https://github.com/fmessina-uade/TPO-LocalComercial-RaizUrbana</a>
+        </p>
+        <p><strong>Sitio web desplegado con GitHub Pages:</strong><br>
+            <a href="https://fmessina-uade.github.io/TPO-LocalComercial-RaizUrbana/" target="_blank">https://fmessina-uade.github.io/TPO-LocalComercial-RaizUrbana/</a>
+        </p>
+
+        <div class="nota-aclaratoria">
+            <strong>Nota Aclaratoria</strong><br>
+            Es posible que la última contribución al repositorio figure a nombre de 'facuumessina'. Esta es mi cuenta personal; por una omisión, olvidé cambiar a mi cuenta educacional ('fmessina-uade') antes de realizar el último commit.
+        </div>
+    </section>
+
+    <section class="page-break">
+        <h2 class="section-title">6. Material de investigación y referencias</h2>
+        <ul>
+            <li><strong>Referentes de diseño:</strong> Páginas corporativas con hero limpio, tipografía moderna y secciones "About" claras (p. ej., brightplan.com).</li>
+            <li><strong>Buenas prácticas:</strong> Guías de accesibilidad y diseño responsivo tomadas de la documentación oficial de Bootstrap y Tailwind.</li>
+        </ul>
+    </section>
+
+</div>
+
+</body>
+</html>
