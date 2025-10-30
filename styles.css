@@ -119,18 +119,43 @@ body{
 .timeline-item{ position:relative; padding-left:2.5rem; margin-bottom:1rem }
 .timeline-dot{ position:absolute; left:.5rem; top:.35rem; width:.8rem; height:.8rem; background:var(--brand); border-radius:50%; box-shadow:0 0 0 4px rgba(46,125,50,.18) }
 
-.modal{ position:fixed; inset:0; display:none; }
-.modal:target{ display:block; }
-.modal-overlay{ position:absolute; inset:0; background:rgba(0,0,0,.55); backdrop-filter: blur(2px); }
-.modal-dialog{
-    position:relative; max-width:680px; margin:6rem auto; background:#fff;
-    border-radius:1rem; padding:1.25rem 1.5rem; box-shadow:0 24px 60px rgba(11,19,32,.35);
+/* Estilos para el modal custom (ej: contacto), evitando conflicto con Bootstrap */
+.modal:not(.fade) {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 1050;
 }
+
+.modal:not(.fade):target {
+    display: block;
+}
+
+.modal:not(.fade) .modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+    backdrop-filter: blur(2px);
+    z-index: 0;
+}
+
+.modal:not(.fade) .modal-dialog {
+    position: relative;
+    max-width: 680px;
+    margin: 6rem auto;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 24px 60px rgba(11, 19, 32, .35);
+    z-index: 1;
+    pointer-events: auto;
+}
+
 .modal-close{ position:absolute; top:.35rem; right:.6rem; text-decoration:none; font-size:1.8rem; line-height:1; color:#333 }
 .modal-close:hover{ color:#000 }
 
 @supports selector(:has(*)) {
-    body:has(.modal:target){ overflow:hidden }
+    body:has(.modal:not(.fade):target){ overflow:hidden }
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -173,12 +198,12 @@ eyebrow-title{
     content:""; position:absolute; inset:0; border-radius:inherit; padding-top:3px;
     background:linear-gradient(90deg, rgba(46,125,50,.6), rgba(255,193,7,.6));
     -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite:xor; mask-composite:exclude; opacity:.55;
+    -webkit-mask-composite:xor; mask-composite:exclude; opacity:.55; pointer-events: none;
 }
 .values-card:hover{ transform:translateY(-2px); box-shadow:0 16px 34px rgba(11,19,32,.12) }
 .value-icon{
     width:40px; height:40px; border-radius:.75rem;
-    display:flex; align-items:center; justify-content:center;
+    display:flex; align-items-center; justify-content:center;
     background:rgba(46,125,50,.08); color:var(--brand-700); margin-bottom:.5rem
 }
 
@@ -204,10 +229,18 @@ eyebrow-title{
     opacity:.7; margin:.25rem 0 1rem
 }
 
-/* Mejoras Productos /*
+/* Mejoras Productos */
 
+.pagination .page-item .page-link {
+    color: var(--brand-700);
+}
 
- */
+.pagination .page-item.active .page-link {
+    background-color: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+}
+
 .filters .nav-link{
     border:1px solid #e5e7eb; background:#fff; color:#374151;
     border-radius:999px; padding:.35rem .8rem;
@@ -245,11 +278,6 @@ eyebrow-title{
 .price{ font-weight:800; color:var(--brand-700) }
 
 /* Mejoras contacto /*
-/* ===== Modal: asegurar capas para que no se cierre al hacer clic ===== */
-.modal{ position:fixed; inset:0; display:none; z-index:1050; } /* sobre el resto */
-.modal:target{ display:block; }
-.modal-overlay{ position:absolute; inset:0; background:rgba(0,0,0,.55); backdrop-filter:blur(2px); z-index:0; }
-.modal-dialog{ position:relative; z-index:1; pointer-events:auto; }
 
 footer.border-top{ border-top:1px solid #e5e7eb; }
 footer.border-top .container{ padding-top:1rem; padding-bottom:1rem; }
