@@ -204,11 +204,24 @@ eyebrow-title{
     -webkit-mask-composite:xor; mask-composite:exclude; opacity:.55; pointer-events: none;
 }
 .values-card:hover{ transform:translateY(-2px); box-shadow:0 16px 34px rgba(11,19,32,.12) }
-.value-icon{
-    width:40px; height:40px; border-radius:.75rem;
-    display:flex; align-items-center; justify-content:center;
-    background:rgba(46,125,50,.08); color:var(--brand-700); margin: 0 auto .75rem;
+.value-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(46, 125, 50, .08);
+    color: var(--brand-700);
+    margin: 0 auto .75rem;
 }
+
+/* --- Añade esta nueva regla --- */
+.value-icon svg {
+    width: 24px;
+    height: 24px;
+}
+/* ------------------------------- */
 
 .timeline .timeline-item{ margin-bottom:1.4rem }
 .timeline .timeline-dot{ background:var(--brand); box-shadow:0 0 0 6px rgba(46,125,50,.18) }
@@ -279,8 +292,6 @@ eyebrow-title{
 .card-cta a{ text-decoration:none }
 
 .price{ font-weight:800; color:var(--brand-700) }
-
-/* Mejoras contacto /*
 
 footer.border-top{ border-top:1px solid #e5e7eb; }
 footer.border-top .container{ padding-top:1rem; padding-bottom:1rem; }
