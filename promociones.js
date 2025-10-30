@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 7, nombre: 'Ficus lyrata', precio: 32000, img: 'ficus-Lyrata.jpg', promo3x2: false },
         { id: 8, nombre: 'Calathea orbifolia', precio: 22000, img: 'Calathea-orbifolia.jpg', promo3x2: false },
         { id: 9, nombre: 'Helecho de Boston', precio: 18500, img: 'helecho-de-boston.webp', promo3x2: true },
-        { id: 10, nombre: 'Orquídea Phalaenopsis', precio: 25000, img: 'Orquídea Phalaenopsis.jpg', promo3x2: false },
+        { id: 10, nombre: 'Orquídea Phalaenopsis', precio: 25000, img: 'orquidea-phalaenopsis.jpg', promo3x2: false },
         { id: 11, nombre: 'Suculenta Echeveria', precio: 5500, img: 'Suculenta Echeveria.jpeg', promo3x2: true },
-        { id: 12, nombre: 'Bonsái Ficus Ginseng', precio: 45000, img: 'Bonsái Ficus Ginseng.avif', promo3x2: false },
+        { id: 12, nombre: 'Bonsái Ficus Ginseng', precio: 45000, img: 'bonsái-ficus-ginseng.avif', promo3x2: false },
         { id: 13, nombre: 'Palmera Areca', precio: 29000, img: 'Palmera Areca.avif', promo3x2: false },
         { id: 14, nombre: 'Cinta (Malamadre)', precio: 9500, img: 'Cinta (Malamadre).avif', promo3x2: true },
         { id: 15, nombre: 'Anturio rojo', precio: 21000, img: 'Anturio rojo.jpeg', promo3x2: false },
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 17, nombre: 'Maceta de terracota', precio: 3500, img: 'Maceta de terracota.jpg', promo3x2: true },
         { id: 18, nombre: 'Regadera de metal', precio: 7500, img: 'Regadera de metal.webp', promo3x2: false },
         { id: 19, nombre: 'Tijeras de podar', precio: 5200, img: 'Tijeras de podar.webp', promo3x2: true },
-        { id: 20, nombre: 'Fertilizante líquido', precio: 3800, img: 'Fertilizante líquido.webp', promo3x2: true }
+        { id: 20, nombre: 'Fertilizante líquido', precio: 3800, img: 'fertilizante-líquido.webp', promo3x2: true }
     ];
 
     const modalProductosLista = document.getElementById('modal-productos-lista');

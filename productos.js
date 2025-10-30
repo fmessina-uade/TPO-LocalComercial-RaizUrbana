@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
         { nombre: 'Ficus lyrata', precio: 32000, desc: 'Árbol de interior con hojas grandes y llamativas.', tag: 'Interior', img: 'ficus-Lyrata.jpg' },
         { nombre: 'Calathea orbifolia', precio: 22000, desc: 'Hojas redondas con rayas plateadas. Necesita humedad.', tag: 'Humedad alta', img: 'Calathea-orbifolia.jpg' },
         { nombre: 'Helecho de Boston', precio: 18500, desc: 'Frondas arqueadas y plumosas. Ideal para colgar.', tag: 'Sombra', img: 'helecho-de-boston.webp' },
-        { nombre: 'Orquídea Phalaenopsis', precio: 25000, desc: 'Flores elegantes y duraderas. Riego cuidadoso.', tag: 'Flores', img: 'Orquídea Phalaenopsis.jpg' },
+        { nombre: 'Orquídea Phalaenopsis', precio: 25000, desc: 'Flores elegantes y duraderas. Riego cuidadoso.', tag: 'Flores', img: 'orquídea-phalaenopsis.jpg' },
         { nombre: 'Suculenta Echeveria', precio: 5500, desc: 'Forma de roseta. Necesita mucho sol.', tag: 'Pleno sol', img: 'Suculenta Echeveria.jpeg' },
-        { nombre: 'Bonsái Ficus Ginseng', precio: 45000, desc: 'Tronco grueso y raíces aéreas. Arte en miniatura.', tag: 'Bonsái', img: 'Bonsái Ficus Ginseng.avif' },
+        { nombre: 'Bonsái Ficus Ginseng', precio: 45000, desc: 'Tronco grueso y raíces aéreas. Arte en miniatura.', tag: 'Bonsái', img: 'bonsái-ficus-ginseng.avif' },
         { nombre: 'Palmera Areca', precio: 29000, desc: 'Purifica el aire. Hojas plumosas y elegantes.', tag: 'Purificadora', img: 'Palmera Areca.avif' },
         { nombre: 'Cinta (Malamadre)', precio: 9500, desc: 'Fácil de cuidar y propagar. Hojas variegadas.', tag: 'Principiantes', img: 'Cinta (Malamadre).avif' },
         { nombre: 'Anturio rojo', precio: 21000, desc: 'Flores rojas brillantes en forma de corazón.', tag: 'Flores', img: 'Anturio rojo.jpeg' },
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { nombre: 'Maceta de terracota', precio: 3500, desc: 'Material poroso que ayuda a la transpiración.', tag: 'Macetas', img: 'Maceta de terracota.jpg' },
         { nombre: 'Regadera de metal', precio: 7500, desc: 'Diseño vintage y funcional. Capacidad de 1.5L.', tag: 'Accesorios', img: 'Regadera de metal.webp' },
         { nombre: 'Tijeras de podar', precio: 5200, desc: 'Acero inoxidable. Ideales para mantenimiento.', tag: 'Herramientas', img: 'Tijeras de podar.webp' },
-        { nombre: 'Fertilizante líquido', precio: 3800, desc: 'Para plantas de interior. Aplicar cada 15 días.', tag: 'Insumos', img: 'Fertilizante líquido.webp' }
+        { nombre: 'Fertilizante líquido', precio: 3800, desc: 'Para plantas de interior. Aplicar cada 15 días.', tag: 'Insumos', img: 'fertilizante-líquido.webp' }
     ];
 
     const productosContainer = document.getElementById('productos-container');
